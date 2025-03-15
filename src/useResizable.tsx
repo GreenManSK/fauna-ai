@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export const useResizable = (initialSize: number) => {
+export const useResizable = (initialSize: number, minSize: number) => {
   const [size, setSize] = useState(initialSize);
   const updateSizeRef = useRef(false);
 
@@ -36,5 +36,5 @@ export const useResizable = (initialSize: number) => {
     };
   }, [size]);
 
-  return { size, handleMouseDown };
+  return { size: Math.max(size, minSize), handleMouseDown };
 };

@@ -1,17 +1,16 @@
 import { useMemo, useState } from "react";
 import "./App.css";
 import { emotions } from "./EmotionsConfig";
-import { useMovable } from "./useMovable";
-import { useResizable } from "./useResizable";
+import { useLocalStorageResizable } from "./useLocalStorageResizable";
+import { useLocalStorageMovable } from "./useLocalStorageMovable";
+import { BORDER_PERCENTAGE } from "./defaults";
 
 function App() {
   const [emotion, setEmotion] = useState("Default");
   const [emotionImage, setEmotionImage] = useState(emotions.default[0]);
-  const { size, handleMouseDown: handleResizeMouseDown } = useResizable(200);
-  const { position, handleMouseDown } = useMovable({
-    x: size,
-    y: size,
-  });
+  const { size, handleMouseDown: handleResizeMouseDown } =
+    useLocalStorageResizable();
+  const { position, handleMouseDown } = useLocalStorageMovable();
 
   const styles = useMemo(
     () => ({
@@ -19,6 +18,7 @@ function App() {
       height: `${size}px`,
       top: `${position.y}px`,
       left: `${position.x}px`,
+      "--border-size": `${size * BORDER_PERCENTAGE}px`,
     }),
     [size, position]
   );
