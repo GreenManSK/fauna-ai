@@ -21,7 +21,7 @@ export enum Emotion {
   default = "default",
   angry = "angry",
   happy = "happy",
-  inLove = "inLove",
+  inLove = "inlove",
   shocked = "shocked",
   worried = "worried",
   sad = "sad",
@@ -29,6 +29,17 @@ export enum Emotion {
   bored = "bored",
   disgusted = "disgusted",
 }
+
+export const emotionsList = Object.values(Emotion);
+
+// Print to console list of emotions capitalized
+// console.log(
+//   "Emotions List:",
+//   emotionsList
+//     .filter((emotion) => emotion !== Emotion.default)
+//     .map((emotion) => emotion.charAt(0).toUpperCase() + emotion.slice(1))
+//     .join(", ")
+// );
 
 export const emotions = {
   [Emotion.default]: [fauna11],
