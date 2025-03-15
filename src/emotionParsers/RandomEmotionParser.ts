@@ -1,4 +1,4 @@
-import { EmotionSetter, IEmotionParser } from "./iEmotionParser";
+import { EmotionSetter, IEmotionParser } from "./IEmotionParser";
 import { Emotion } from "../EmotionsConfig";
 
 class RandomEmotionParser implements IEmotionParser {

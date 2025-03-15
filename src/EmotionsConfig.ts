@@ -8,7 +8,6 @@ import fauna7 from "./assets/Emote-fauna7.png";
 import fauna8 from "./assets/Emote-fauna8.png";
 import fauna11 from "./assets/Emote-fauna11.png";
 import fauna17 from "./assets/Emote-fauna17.png";
-import fauna18 from "./assets/Emote-fauna18.png";
 import fauna19 from "./assets/Emote-fauna19.png";
 import fauna20 from "./assets/Emote-fauna20.png";
 import fauna21 from "./assets/Emote-fauna21.png";

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { randomEmotionParser } from "./emotionParsers/RandomEmotionParser";
-import { EmotionSetter } from "./emotionParsers/iEmotionParser";
+import { EmotionSetter } from "./emotionParsers/IEmotionParser";
 
 // Parsers are used in order, first that returns true is used and rest is ignored
 const parsers = [randomEmotionParser];
