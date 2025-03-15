@@ -2,7 +2,7 @@
 
 A simple PNG Avatar based on Ceres Fauna's emotes for Chat GPT. Make your AI more like our favorite VTuber, whom we will never forget.
 
-_TODO: Insert gif_
+![Ceres Fauna AI](example.gif)
 
 ## Installing Tampermonkey Script
 
