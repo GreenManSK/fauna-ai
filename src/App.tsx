@@ -1,13 +1,12 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import "./App.css";
-import { emotions } from "./EmotionsConfig";
 import { useLocalStorageResizable } from "./useLocalStorageResizable";
 import { useLocalStorageMovable } from "./useLocalStorageMovable";
 import { BORDER_PERCENTAGE } from "./defaults";
+import { useEmotion } from "./useEmotion";
 
 function App() {
-  const [emotion, setEmotion] = useState("Default");
-  const [emotionImage, setEmotionImage] = useState(emotions.default[0]);
+  const { emotion, emotionImage, setEmotion } = useEmotion();
   const { size, handleMouseDown: handleResizeMouseDown } =
     useLocalStorageResizable();
   const { position, handleMouseDown } = useLocalStorageMovable(size);
