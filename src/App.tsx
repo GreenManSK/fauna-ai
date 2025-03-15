@@ -10,7 +10,7 @@ function App() {
   const [emotionImage, setEmotionImage] = useState(emotions.default[0]);
   const { size, handleMouseDown: handleResizeMouseDown } =
     useLocalStorageResizable();
-  const { position, handleMouseDown } = useLocalStorageMovable();
+  const { position, handleMouseDown } = useLocalStorageMovable(size);
 
   const styles = useMemo(
     () => ({

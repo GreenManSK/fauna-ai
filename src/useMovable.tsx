@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export const useMovable = (initialPosition: { x: number; y: number }) => {
+export const useMovable = (
+  initialPosition: { x: number; y: number },
+  size: number
+) => {
   const [position, setPosition] = useState(initialPosition);
   const updatePositionRef = useRef(false);
 
@@ -17,13 +20,34 @@ export const useMovable = (initialPosition: { x: number; y: number }) => {
     [position.x, position.y]
   );
 
+  const ensureVisible = useCallback(() => {
+    setPosition((prevPosition) => {
+      const newX = Math.max(
+        size / 2,
+        Math.min(prevPosition.x, window.innerWidth - size / 2)
+      );
+      const newY = Math.max(
+        size / 2,
+        Math.min(prevPosition.y, window.innerHeight - size / 2)
+      );
+      return { x: newX, y: newY };
+    });
+  }, [size]);
+
   useEffect(() => {
-    const handleMouseUp = () => (updatePositionRef.current = false);
+    ensureVisible();
+  }, [ensureVisible, size]);
+
+  useEffect(() => {
+    const handleMouseUp = () => {
+      ensureVisible();
+      updatePositionRef.current = false;
+    };
     document.addEventListener("mouseup", handleMouseUp);
     return () => {
       document.removeEventListener("mouseup", handleMouseUp);
     };
-  }, []);
+  }, [ensureVisible]);
 
   useEffect(() => {
     const handleMouseMove = (moveEvent: MouseEvent) => {
@@ -41,5 +65,15 @@ export const useMovable = (initialPosition: { x: number; y: number }) => {
     };
   }, [position.x, position.y]);
 
-  return { position, handleMouseDown };
+  useEffect(() => {
+    const handleResize = () => {
+      ensureVisible();
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [ensureVisible]);
+
+  return { position, handleMouseDown, ensureVisible };
 };
