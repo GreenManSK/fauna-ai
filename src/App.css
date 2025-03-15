@@ -1,13 +1,28 @@
 .App {
   --color: #80bf92;
+  --controls-color: #ddebbf;
   --border-radius: 5%;
+  --border-size: 5px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: var(--color);
-  border: 5px solid var(--color);
+  padding: var(--border-size);
   border-radius: var(--border-radius);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--border-radius);
+    border: var(--border-size) solid var(--color);
+    pointer-events: none;
+    z-index: 1;
+  }
 
   .FunctionButton {
     opacity: 0;
@@ -15,7 +30,8 @@
     position: absolute;
     width: 20%;
     height: 20%;
-    background-color: #f3c1c2;
+    clip-path: polygon(var(--border-size) var(--border-size), 0% 100%, 100% 0%);
+    background-color: var(--controls-color);
   }
 
   .FunctionButton:hover {
@@ -32,6 +48,8 @@
     bottom: 0;
     right: 0;
     cursor: nwse-resize;
+    /* Rotate by 180 degrees */
+    transform: rotate(180deg);
   }
 
   img {
