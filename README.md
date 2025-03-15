@@ -1,4 +1,4 @@
-# Fauna AI Avatar
+# Ceres Fauna AI Avatar
 
 A simple PNG Avatar based on Ceres Fauna's emotes for Chat GPT. Make your AI more like our favorite VTuber, whom we will never forget.
 
@@ -7,6 +7,8 @@ _TODO: Insert gif_
 ## Installing Tampermonkey Script
 
 This avatar is designed to be used with [Tampermonkey](https://www.tampermonkey.net/). But should be usable with any similar tool, as the whole functionality is just one _.js_ script.
+
+You can find the latest `script.js` under https://github.com/GreenManSK/fauna-ai/releases.
 
 ## Prompt
 
@@ -40,10 +42,6 @@ This is just a simple proof of concept I wanted to do for something more complex
 
 Yes, you can add your own parser. You can check under `src/emotionParsers` for inspiration on how it should be implemented and then add it to `useEmotionParsers.tsx`. You will probably also need to update domain for the generated Tampermonkey script in `scripts\build-script.js`.
 
-## Inspiration
-
-- chihiro-gpt-extension by node62: https://github.com/node62/chihiro-gpt-extension/tree/main
-
 ## Development
 
 ### Installing
@@ -58,3 +56,7 @@ Yes, you can add your own parser. You can check under `src/emotionParsers` for i
 
 `pnpm run build-script`
 Script will be located under `dist/script.js`.
+
+## Inspiration
+
+- chihiro-gpt-extension by node62: https://github.com/node62/chihiro-gpt-extension/tree/main
