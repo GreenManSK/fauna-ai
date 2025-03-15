@@ -18,7 +18,7 @@ import fauna30 from "./assets/Emote-fauna30.png";
 import fauna31 from "./assets/Emote-fauna31.png";
 import fauna32 from "./assets/Emote-fauna32.png";
 
-export enum Emotions {
+export enum Emotion {
   default = "default",
   angry = "angry",
   happy = "happy",
@@ -32,14 +32,14 @@ export enum Emotions {
 }
 
 export const emotions = {
-  [Emotions.default]: [fauna11],
-  [Emotions.angry]: [fauna1, fauna5, fauna7, fauna31],
-  [Emotions.happy]: [fauna2, fauna8, fauna11, fauna17, fauna22],
-  [Emotions.inLove]: [fauna3, fauna8],
-  [Emotions.shocked]: [fauna21, fauna30, fauna32],
-  [Emotions.worried]: [fauna29, fauna30],
-  [Emotions.sad]: [fauna6],
-  [Emotions.laughing]: [fauna4],
-  [Emotions.bored]: [fauna19],
-  [Emotions.disgusted]: [fauna20],
+  [Emotion.default]: [fauna11],
+  [Emotion.angry]: [fauna1, fauna5, fauna7, fauna31],
+  [Emotion.happy]: [fauna2, fauna8, fauna11, fauna17, fauna22],
+  [Emotion.inLove]: [fauna3, fauna8],
+  [Emotion.shocked]: [fauna21, fauna30, fauna32],
+  [Emotion.worried]: [fauna29, fauna30],
+  [Emotion.sad]: [fauna6],
+  [Emotion.laughing]: [fauna4],
+  [Emotion.bored]: [fauna19],
+  [Emotion.disgusted]: [fauna20],
 };

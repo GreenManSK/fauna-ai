@@ -4,9 +4,11 @@ import { useLocalStorageResizable } from "./useLocalStorageResizable";
 import { useLocalStorageMovable } from "./useLocalStorageMovable";
 import { BORDER_PERCENTAGE } from "./defaults";
 import { useEmotion } from "./useEmotion";
+import { useEmotionParsers } from "./useEmotionParsers";
 
 function App() {
   const { emotion, emotionImage, setEmotion } = useEmotion();
+  useEmotionParsers(setEmotion);
   const { size, handleMouseDown: handleResizeMouseDown } =
     useLocalStorageResizable();
   const { position, handleMouseDown } = useLocalStorageMovable(size);

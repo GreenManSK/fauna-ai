@@ -1,11 +1,11 @@
 import { useCallback, useState } from "react";
-import { emotions, Emotions } from "./EmotionsConfig";
+import { emotions, Emotion } from "./EmotionsConfig";
 
 export const useEmotion = () => {
-  const [emotion, setEmotion] = useState(Emotions.default);
+  const [emotion, setEmotion] = useState(Emotion.default);
   const [emotionImage, setEmotionImage] = useState(emotions[emotion][0]);
 
-  const setNewEmotion = useCallback((newEmotion: Emotions) => {
+  const setNewEmotion = useCallback((newEmotion: Emotion) => {
     setEmotion(newEmotion);
     const newEmotionImages = emotions[newEmotion];
     const randomIndex = Math.floor(Math.random() * newEmotionImages.length);
