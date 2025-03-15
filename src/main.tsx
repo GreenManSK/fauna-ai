@@ -3,6 +3,17 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 
+
+// sob: "sob.png",
+// anger: "anger.png",
+// happy: "happy.png",
+// love: "love.png",
+// mondo: "mondo.png",
+// scared: "scared.png",
+// shock: "shock.png",
+// worried: "worried.png",
+// curious: "curious.png",
+
 const prepareElement = (id: string) => {
   const existingElement = document.getElementById(id);
   if (existingElement) {
