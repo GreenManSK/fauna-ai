@@ -28,11 +28,11 @@ function App() {
         <div className="App" style={styles}>
             <div
                 className="MoveButton FunctionButton"
-                onMouseDown={handleMouseDown}
+                onPointerDown={handleMouseDown}
             />
             <div
                 className="ResizeButton FunctionButton"
-                onMouseDown={handleResizeMouseDown}
+                onPointerDown={handleResizeMouseDown}
             />
             <img
                 src={emotionImage}

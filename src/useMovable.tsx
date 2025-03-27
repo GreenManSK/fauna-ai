@@ -43,9 +43,9 @@ export const useMovable = (
             ensureVisible();
             updatePositionRef.current = false;
         };
-        document.addEventListener('mouseup', handleMouseUp);
+        document.addEventListener('pointerup', handleMouseUp);
         return () => {
-            document.removeEventListener('mouseup', handleMouseUp);
+            document.removeEventListener('pointerup', handleMouseUp);
         };
     }, [ensureVisible]);
 
@@ -59,9 +59,9 @@ export const useMovable = (
             }
         };
 
-        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('pointermove', handleMouseMove);
         return () => {
-            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('pointermove', handleMouseMove);
         };
     }, [position.x, position.y]);
 

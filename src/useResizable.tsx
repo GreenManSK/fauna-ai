@@ -16,9 +16,9 @@ export const useResizable = (initialSize: number, minSize: number) => {
 
     useEffect(() => {
         const handleMouseUp = () => (updateSizeRef.current = false);
-        document.addEventListener('mouseup', handleMouseUp);
+        document.addEventListener('pointerup', handleMouseUp);
         return () => {
-            document.removeEventListener('mouseup', handleMouseUp);
+            document.removeEventListener('pointerup', handleMouseUp);
         };
     }, []);
 
@@ -30,9 +30,9 @@ export const useResizable = (initialSize: number, minSize: number) => {
             }
         };
 
-        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('pointermove', handleMouseMove);
         return () => {
-            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('pointermove', handleMouseMove);
         };
     }, [size]);
 
